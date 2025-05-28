@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import {useNotificationStore} from '@/PonBike/app/stores/notificationStore';
+import {useNotificationStore} from '@/PonBike/app/libs/stores/notificationStore';
 
 export interface NavItem {
     label: string;
@@ -37,12 +37,13 @@ export const Header: React.FC<HeaderProps> = ({
 
             <nav className="hidden md:flex space-x-6 font-medium">
                 {navItems.map(({label, route}) => (
-                    <a key={label} href={route} className="hover:text-gray-700 transition-colors duration-200">
+                    <a key={label} href={route}
+                       className="hover:text-gray-700 transition-colors duration-200 hover:underline">
                         {label}
                     </a>
                 ))}
             </nav>
-
+            {/* ToDo: replace placeholder with final icons */}
             <div className="flex items-center space-x-4">
                 <button
                     aria-label="Account"
@@ -52,14 +53,14 @@ export const Header: React.FC<HeaderProps> = ({
                     👤
                 </button>
                 <button
-                    aria-label="Warenkorb"
+                    aria-label="Cart"
                     onClick={handleMenuButtonClick}
                     className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
                 >
                     🛒
                 </button>
                 <button
-                    aria-label="Menü"
+                    aria-label="Navigation"
                     onClick={handleMenuButtonClick}
                     className="hidden md:block text-gray-700 hover:text-gray-900 transition-colors duration-200"
                 >

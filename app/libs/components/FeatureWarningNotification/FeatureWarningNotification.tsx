@@ -1,10 +1,10 @@
 'use client'
 
 import {AnimatePresence, motion} from 'framer-motion'
-import {useNotificationStore} from '@/PonBike/app/stores/notificationStore'
-import {IconWarning} from '@/PonBike/app/components/icons/IconWarning';
+import {useNotificationStore} from '@/PonBike/app/libs/stores/notificationStore'
+import {IconWarning} from '@/PonBike/app/libs/icons';
 
-const FeatureWarningNotification = () => {
+export const FeatureWarningNotification = () => {
     const message = useNotificationStore((s) => s.message)
     return (
         <AnimatePresence>
@@ -27,5 +27,3 @@ const FeatureWarningNotification = () => {
         </AnimatePresence>
     )
 }
-
-export default FeatureWarningNotification
